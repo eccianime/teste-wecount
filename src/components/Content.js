@@ -8,20 +8,20 @@ import ProductCard from './ProductCard';
 import { getProducts } from '../actions/creators';
 
 const Content = ({ products, getProducts, actualURL, nextURL, loading }) =>{
+	useEffect( ()=>{
+		getProducts( actualURL );
+	}, [ getProducts, actualURL ] )
 	const showProducts = ()=>(
 		products.length > 0 && products.map( (product, index)=>(
 			<ProductCard product={product} key={`product-card-${index}`} />
 		))
 	)
-	useEffect( ()=>{
-		getProducts( actualURL );
-	}, [ getProducts, actualURL ] )
 	return(
 	<Container fluid className="content"><Row>
 		<Col xs={12}><p className="text-center text-bold page-title">Sua seleção especial</p></Col>
 		{ showProducts() }
 		<Col xs={12} className="text-center more-products">
-			<Button disabled={loading} className="gray-link more-products" variant="link" onClick={()=>getProducts(nextURL)}>{`${loading ? 'Carregando...' : 'Ainda mais produtos aqui!'}`}</Button>
+			<Button disabled={loading} className="gray-link" variant="link" onClick={()=>getProducts(nextURL)}>{`${loading ? 'Carregando...' : 'Ainda mais produtos aqui!'}`}</Button>
 		</Col>
 		<ShareNews />
 	</Row></Container>
