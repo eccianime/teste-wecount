@@ -48,7 +48,7 @@ nav button {
 }
 
 .content{
-	padding: 35px 85px 85px; 
+	padding: 50px 85px 85px; 
 	background-color: rgb(240,240,240);
 }
 
@@ -66,9 +66,11 @@ nav button {
 	color: rgb(136,136,136);
 }
 
-.product-card .title, 
-.product-card .final-price{
-	font-weight: bold;
+.gray-link:hover{
+	text-decoration: none;
+	color: rgb(249,249,249);
+	border: 1px solid rgb(136,136,136);
+	background-color: rgb(136,136,136);
 }
 
 .product-card .title,
@@ -79,7 +81,7 @@ nav button {
 }
 
 .content .page-title {
-	margin-bottom: 35px;
+	margin-bottom: 50px;
 }
 
 .share-news{
@@ -88,6 +90,10 @@ nav button {
 
 .send-button{
 	width: 200px;
+}
+
+.more-products{
+	margin-top: 30px;
 }
 
 footer{
